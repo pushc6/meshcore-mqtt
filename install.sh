@@ -149,10 +149,10 @@ install_remote_dependencies() {
 
     # Detect package manager and install dependencies
     run_remote "
-        if command -v apt &>/dev/null; then
+        if command -v apt-get &>/dev/null; then
             export DEBIAN_FRONTEND=noninteractive
-            apt update -qq
-            apt install -y -qq python3 python3-venv python3-pip git bluez > /dev/null 2>&1
+            apt-get update -qq
+            apt-get install -y -qq python3 python3-venv python3-pip git bluez > /dev/null 2>&1
         elif command -v dnf &>/dev/null; then
             dnf install -y -q python3 python3-pip git bluez
         elif command -v pacman &>/dev/null; then
